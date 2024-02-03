@@ -1,0 +1,76 @@
+title: 'Page sections'
+fields:
+  -
+    handle: page_sections
+    field:
+      collapse: accordion
+      previews: true
+      fullscreen: true
+      sets:
+        sections:
+          display: Sections
+          instructions: null
+          icon: layout-flip-up
+          sets:
+            multi_columns:
+              display: 'Multi columns'
+              instructions: null
+              icon: layout-split-verical
+              fields:
+                -
+                  import: multicolumn
+            text_box:
+              display: 'Text box'
+              instructions: null
+              icon: text-formatting-image-left
+              fields:
+                -
+                  import: text_box
+            image:
+              display: Image
+              instructions: null
+              icon: media-image-picture-gallery
+              fields: {  }
+            video:
+              display: Video
+              instructions: null
+              icon: media-webcam-video
+              fields:
+                -
+                  import: video
+            image_textbox:
+              display: 'Image textbox'
+              instructions: null
+              icon: text-formatting-wrap-image-margin-left
+              fields:
+                -
+                  import: image_textbox
+            text_section:
+              display: 'Text section'
+              instructions: null
+              icon: text-formatting-initial-letter
+              fields:
+                -
+                  import: text_section
+            cta:
+              display: 'Call to action'
+              instructions: null
+              icon: align-object-center
+              fields:
+                -
+                  import: cta
+            icon_entries:
+              display: 'Icon entries'
+              instructions: null
+              icon: addon-boxes-stack
+              fields:
+                -
+                  import: icon_entries
+      type: replicator
+      display: 'Page sections'
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      replicator_preview: true

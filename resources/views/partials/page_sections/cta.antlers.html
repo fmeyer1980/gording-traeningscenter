@@ -1,0 +1,15 @@
+<section class="bg-primary text-light-glare p-lg rounded-tr-[10cqi] rounded-bl-[10cqi]" aria-label="{{ headline }}">
+    <div class="flex flex-col items-center text-center flow-y flow-space-600">
+        <h2 class="text-750">{{ headline }}</h2>
+        <div class="max-w-[65ch] text-pretty prose-a:text-light-glare prose-a:underline-offset-2 flow-y flow-space-1em">
+            {{ text }}
+        </div>
+        {{ if links }}
+            <div class="flex gap-gutter flex-wrap flow-space-700">
+                {{ links }}
+                    {{ partial:components/btn :linkUrl="url" :linkText="text"  class="grow md:grow-0" }}
+                {{ /links }}
+            </div>
+        {{ endif }}
+    </div>
+</section>

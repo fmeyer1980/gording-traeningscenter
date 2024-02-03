@@ -1,0 +1,82 @@
+title: 'Text box'
+fields:
+  -
+    handle: text
+    field:
+      collapse: accordion
+      always_show_set_button: false
+      previews: true
+      smart_typography: false
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+        - horizontalrule
+        - title
+        - brand_color
+        - large_text
+      save_html: false
+      inline: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      antlers: false
+      remove_empty_nodes: false
+      display: Text
+      type: bard
+      icon: bard
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      sets:
+        links:
+          display: Links
+          fields:
+            -
+              handle: links
+              field: links.links
+  -
+    handle: show_list_box
+    field:
+      default: false
+      display: 'Show list box'
+      type: toggle
+      icon: toggle
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+  -
+    handle: list_headline
+    field:
+      input_type: text
+      antlers: false
+      display: 'list headline'
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      if:
+        show_list_box: 'equals true'
+  -
+    handle: list
+    field:
+      display: List
+      type: list
+      icon: list
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      if:
+        show_list_box: 'equals true'

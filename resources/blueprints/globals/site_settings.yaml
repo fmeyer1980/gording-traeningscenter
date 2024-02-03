@@ -1,0 +1,323 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: site_name
+            field:
+              input_type: text
+              antlers: false
+              display: 'Side navn'
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: email
+            field:
+              input_type: email
+              antlers: false
+              display: Email
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+          -
+            handle: phone
+            field:
+              input_type: tel
+              antlers: false
+              display: Telefonnummer
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+          -
+            handle: cvr
+            field:
+              input_type: number
+              antlers: false
+              display: Cvr
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+          -
+            handle: address
+            field:
+              input_type: text
+              antlers: false
+              display: Address
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+          -
+            handle: zip
+            field:
+              input_type: text
+              antlers: false
+              display: Zip
+              type: text
+              icon: text
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+          -
+            handle: city
+            field:
+              input_type: text
+              antlers: false
+              display: City
+              type: text
+              icon: text
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+          -
+            import: socialmedia_links
+          -
+            handle: opening_hours
+            field:
+              display: 'Opening hours'
+              type: list
+              icon: list
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+  header:
+    display: Header
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            handle: show_button
+            field:
+              default: false
+              type: toggle
+              display: 'Show button'
+              icon: toggle
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: button_text
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Button text'
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                show_button: 'equals true'
+          -
+            handle: button_link
+            field:
+              collections:
+                - pages
+              container: assets
+              type: link
+              display: 'Button link'
+              icon: link
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                show_button: 'equals true'
+  footer:
+    display: Footer
+    sections:
+      -
+        fields:
+          -
+            handle: benefits
+            field:
+              display: Benefits
+              type: list
+              icon: list
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+          -
+            handle: footer_navigation
+            field:
+              max_items: 1
+              mode: default
+              display: 'Footer navigation'
+              type: structures
+              icon: structures
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+          -
+            handle: cta
+            field:
+              display: Cta
+              type: section
+              icon: section
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+          -
+            handle: cta_image
+            field:
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              display: Image
+              type: assets
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              max_files: 1
+          -
+            handle: cta_content
+            field:
+              collapse: false
+              always_show_set_button: false
+              previews: true
+              smart_typography: false
+              sets:
+                links:
+                  display: Links
+                  fields:
+                    -
+                      handle: links
+                      field: links.links
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - anchor
+                - horizontalrule
+                - title
+                - brand_color
+                - large_text
+              save_html: false
+              inline: false
+              toolbar_mode: fixed
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: false
+              reading_time: false
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              antlers: false
+              remove_empty_nodes: false
+              display: Content
+              type: bard
+              icon: bard
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+          -
+            handle: cta_show_form
+            field:
+              default: false
+              display: 'Show form'
+              type: toggle
+              icon: toggle
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+          -
+            handle: cta_form_picker
+            field:
+              max_items: 1
+              display: 'Form picker'
+              type: form
+              icon: form
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                cta_show_form: 'equals true'
+          -
+            handle: cta_conformation_page
+            field:
+              mode: default
+              create: true
+              collections:
+                - pages
+              type: entries
+              display: 'Conformation page'
+              icon: entries
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                cta_show_form: 'equals true'
+              max_items: 1
+  custom_code:
+    display: 'Custom code'
+    sections:
+      -
+        fields:
+          -
+            handle: style
+            field:
+              theme: material
+              mode: css
+              mode_selectable: false
+              indent_type: tabs
+              indent_size: 4
+              key_map: default
+              line_numbers: true
+              line_wrapping: true
+              display: Style
+              type: code
+              icon: code
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+          -
+            handle: script
+            field:
+              theme: material
+              mode: javascript
+              mode_selectable: false
+              indent_type: tabs
+              indent_size: 4
+              key_map: default
+              line_numbers: true
+              line_wrapping: true
+              display: Script
+              type: code
+              icon: code
+              listable: hidden
+              instructions_position: above
+              visibility: visible

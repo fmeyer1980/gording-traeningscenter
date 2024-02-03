@@ -1,0 +1,154 @@
+title: 'Socialmedia links'
+fields:
+  -
+    handle: socialmedia_links
+    field:
+      collapse: false
+      previews: true
+      sets:
+        main:
+          display: Main
+          instructions: null
+          icon: null
+          sets:
+            facebook:
+              display: Facebook
+              instructions: null
+              icon: social-facebook
+              fields:
+                -
+                  handle: handle
+                  field:
+                    input_type: url
+                    prepend: 'https://www.facebook.com/'
+                    antlers: false
+                    display: Handle
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: prefix
+                  field:
+                    default: 'https://www.facebook.com/'
+                    type: hidden
+                    icon: hidden
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+            instagram:
+              display: Instagram
+              instructions: null
+              icon: social-instagram
+              fields:
+                -
+                  handle: handle
+                  field:
+                    input_type: url
+                    prepend: 'https://www.instagram.com/'
+                    antlers: false
+                    display: Handle
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: prefix
+                  field:
+                    default: 'https://www.instagram.com/'
+                    type: hidden
+                    icon: hidden
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+            linkedin:
+              display: Linkedin
+              instructions: null
+              icon: social-linkedin
+              fields:
+                -
+                  handle: handle
+                  field:
+                    input_type: url
+                    antlers: false
+                    display: Handle
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    prepend: 'https://www.linkedin.com/'
+                -
+                  handle: prefix
+                  field:
+                    default: 'https://www.linkedin.com/'
+                    type: hidden
+                    icon: hidden
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+            twitter:
+              display: Twitter
+              instructions: null
+              icon: social-twitter
+              fields:
+                -
+                  handle: handle
+                  field:
+                    input_type: url
+                    antlers: false
+                    display: Handle
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    prepend: 'https://twitter.com/'
+                -
+                  handle: prefix
+                  field:
+                    default: 'https://twitter.com/'
+                    type: hidden
+                    icon: hidden
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+            pinterest:
+              display: Pinterest
+              instructions: null
+              icon: social-pinterest
+              fields:
+                -
+                  handle: handle
+                  field:
+                    input_type: text
+                    prepend: 'https://www.pinterest.dk/'
+                    antlers: false
+                    display: Handle
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    always_save: false
+                -
+                  handle: prefix
+                  field:
+                    default: 'https://www.pinterest.dk/'
+                    display: Prefix
+                    type: hidden
+                    icon: hidden
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    always_save: false
+      display: 'Socialmedia links'
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+      hide_display: false

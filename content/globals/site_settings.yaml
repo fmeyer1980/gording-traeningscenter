@@ -1,0 +1,47 @@
+title: 'Site settings'
+data:
+  site_name: 'Gørding træningscenter'
+  email: mail@goerdingmotion.dk
+  phone: '30 11 30 43'
+  socialmedia_links:
+    -
+      id: lrtdk2ep
+      handle: /
+      prefix: 'https://www.facebook.com/'
+      type: facebook
+      enabled: true
+    -
+      id: lrtdkap3
+      handle: /
+      prefix: 'https://www.linkedin.com/'
+      type: linkedin
+      enabled: true
+  show_button: true
+  button_text: 'Online booking'
+  button_link: /
+  benefits:
+    - 'Altid faste priser'
+    - 'Hurtig og nem tilmelding'
+    - 'For alle aldre'
+    - 'ingen binding'
+  cta_image: image-4-(2).jpg
+  cta_content:
+    -
+      type: heading
+      attrs:
+        level: 2
+      content:
+        -
+          type: text
+          text: 'Kontakt os her her hvis du har brug for hjælp!'
+    -
+      type: paragraph
+      attrs:
+        class: null
+      content:
+        -
+          type: text
+          text: 'Fermentum posuere urna nec tincidunt praesent. Dui accumsan sit amet nulla. Ultricies integer quis auctor elit sed vulputate. Senectus et netus et malesuada fames. Mauris nunc congue nisi vitae suscipit tellus mauris.'
+  cta_show_form: true
+  cta_form_picker: contact
+  cta_conformation_page: 8b26809e-e789-45d6-91ac-4acfa8f1ae25

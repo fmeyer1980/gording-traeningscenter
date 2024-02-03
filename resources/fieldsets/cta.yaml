@@ -1,0 +1,23 @@
+title: Cta
+fields:
+  -
+    handle: headline
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Headline
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: text
+    field: common_fields.simple_text
+    config:
+      display: Text
+  -
+    handle: links
+    field: links.links

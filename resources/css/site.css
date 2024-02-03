@@ -1,0 +1,198 @@
+/* purgecss start ignore */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+@import './base';
+@import './var';
+@import './btn';
+@import './type';
+@import './page-content';
+
+@import './compositions/cluster';
+@import './compositions/switcher';
+@import './compositions/split';
+@import './compositions/auto-grid';
+@import './compositions/reel';
+
+@import './utilities/container-wrapper';
+@import './utilities/image-responsive';
+@import './utilities/image-overlay';
+@import './utilities/full-bleed';
+@import './utilities/flow';
+
+@import './blocks/entry_icons';
+
+@import './vendor/gallery';
+
+
+@import 'tailwindcss/utilities';
+
+
+@layer utilities {
+    .split-gap-none {
+        --split-gap: 0px;
+    }
+    .split-gap-xs {
+        --split-gap: var(--size-300);
+    }
+    .split-gap-sm {
+        --split-gap: var(--size-500);
+    }
+    .split-gap-md {
+        --split-gap: var(--size-700);
+    }
+    .split-gap-lg {
+        --split-gap: var(--size-900);
+    }
+    .split-gap-xl {
+        --split-gap: var(--size-xl);
+    }
+    .auto-grid-xs {
+        --auto-grid-size: 8rem;
+    }
+    .auto-grid-sm {
+        --auto-grid-size: 12rem;
+    }
+
+    .auto-grid-md {
+        --auto-grid-size: 16rem;
+    }
+
+    .auto-grid-lg {
+        --auto-grid-size: 20rem;
+    }
+
+    .auto-grid-xl {
+        --auto-grid-size: 25rem;
+    }
+
+    .flow-space-none {
+        --flow-space: 0px;
+    }
+
+    .flow-space-half-em {
+        --flow-space: 0.5em;
+    }
+    .flow-space-075em {
+        --flow-space: 0.75em;
+    }
+    .flow-space-1em {
+        --flow-space: 1em;
+    }
+    .flow-space-2em {
+        --flow-space: 2em;
+    }
+    .flow-space-none {
+        --flow-space: 0px;
+    }
+    .flow-space-xxs {
+        --flow-space: var(--size-xxs);
+    }
+    .flow-space-xs {
+        --flow-space: var(--size-xs);
+    }
+    .flow-space-sm {
+        --flow-space: var(--size-sm);
+    }
+    .flow-space-100 {
+        --flow-space: var(--size-100);
+    }
+    .flow-space-200 {
+        --flow-space: var(--size-200);
+    }
+    .flow-space-300 {
+        --flow-space: var(--size-300);
+    }
+    .flow-space-400 {
+        --flow-space: var(--size-400);
+    }
+    .flow-space-500 {
+        --flow-space: var(--size-500);
+    }
+    .flow-space-600 {
+        --flow-space: var(--size-600);
+    }
+    .flow-space-700 {
+        --flow-space: var(--size-700);
+    }
+    .flow-space-800 {
+        --flow-space: var(--size-800);
+    }
+    .flow-space-900 {
+        --flow-space: var(--size-900);
+    }
+    .flow-space-lg {
+        --flow-space: var(--size-lg);
+    }
+    .flow-space-xl {
+        --flow-space: var(--size-xl);
+    }
+
+    .measure-10 {
+        max-width: 10ch;
+    }
+    .measure-15 {
+        max-width: 15ch;
+    }
+    .measure-20 {
+        max-width: 20ch;
+    }
+    .measure-25 {
+        max-width: 25ch;
+    }
+    .measure-30 {
+        max-width: 30ch;
+    }
+    .measure-35 {
+        max-width: 35ch;
+    }
+    .measure-40 {
+        max-width: 40ch;
+    }
+    .measure-45 {
+        max-width: 45ch;
+    }
+    .measure-50 {
+        max-width: 50ch;
+    }
+    .measure-55 {
+        max-width: 55ch;
+    }
+    .measure-60 {
+        max-width: 60ch;
+    }
+    .measure-65 {
+        max-width: 65ch;
+    }
+    .measure-70 {
+        max-width: 70ch;
+    }
+
+    .flex-basis-0 {
+        flex-basis: 0;
+    }
+    .flex-basis-10 {
+        flex-basis: 10ch;
+    }
+    .flex-basis-20 {
+        flex-basis: 20ch;
+    }
+    .flex-basis-25 {
+        flex-basis: 25ch;
+    }
+    .flex-basis-30 {
+        flex-basis: 30ch;
+    }
+    .flex-basis-35 {
+        flex-basis: 35ch;
+    }
+    .flex-basis-40 {
+        flex-basis: 40ch;
+    }
+    .flex-basis-50 {
+        flex-basis: 50ch;
+    }
+    .flex-basis-60 {
+        flex-basis: 60ch;
+    }
+}

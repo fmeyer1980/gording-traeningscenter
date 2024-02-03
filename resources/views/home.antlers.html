@@ -1,0 +1,6 @@
+{{ partial:page_sections/intro }}
+{{ page_sections }}
+    {{ partial src="page_sections/{type}" typeClass="{type | slugify}" }}
+{{ /page_sections }}
+
+

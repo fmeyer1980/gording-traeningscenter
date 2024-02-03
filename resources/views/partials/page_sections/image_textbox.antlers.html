@@ -1,0 +1,29 @@
+{{ sectionColors = switch(
+    (section_color == 'primary-glare') => "bg-primary-glare text-dark-shade [&_p:not(.text-large,.title)]:text-dark-shade/80 [&_.image-overlay]:after:bg-primary-glare",
+    (section_color == 'primary') => "bg-primary text-dark-shade prose-p:text-dark-shade/80 [&_.title]:text-dark-shade [&_.image-overlay]:after:bg-primary",
+    (section_color == 'primary-shade') => "bg-primary-shade text-light-glare [&_p:not(.text-large,.title)]:text-light-glare/80 [&_.image-overlay]:after:bg-primary-shade",
+    (section_color == 'secondary') => "bg-secondary text-dark-shade prose-p:text-dark-shade/80 [&_.title]:text-dark-shade [&_.image-overlay]:after:bg-secondary",
+    (section_color == 'light') => "bg-light text-dark-shade prose-p:text-dark-shade/80 [&_.title]:text-dark-shade",
+    () => "bg-dark text-light-glare prose-p:text-light-glare/80 [&_.title]:text-light-glare"
+)}}
+
+<section class="{{ class }} {{ sectionColors }} split gap-0" aria-label="{{ text | raw | bard_items | where:type:heading | first | bard_text }}">
+    <div class="h-full relative image-overlay  {{ revers ?= 'md:order-2' }}">
+        {{ partial:components/image :imagePath="image" w="1200" h="800" class="w-full h-full absolute inset-0 { flip_image ?= 'scale-x-[-1]'}" }}
+    </div> 
+    <div class="page-content flow-y py-900 md:py-lg mx-gutter prose-h2:!text-700 [&_.text-large]:font-semibold [&_.text-large]:leading-normal  {{ revers == 'true' ? 'md:pl-container md:mr-lg' : 'md:pr-container md:ml-lg' }} ">
+        {{ text }}
+            {{ if type == "text" }}
+                {{ text }}
+            {{ elseif type == "two_col_text" }}
+                {{ partial src="sets/{type}" }}
+            {{ elseif type == "links" }}
+            <div class="flex flex-wrap gap-100 flow-space-600">
+                {{ links }}
+                    {{ partial:components/btn :linkIcon="icon" :linkUrl="url" :linkText="text" }}
+                {{ /links }}
+            </div>
+            {{ /if }}
+        {{ /text }}
+    </div>
+</section>

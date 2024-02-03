@@ -1,0 +1,348 @@
+title: 'Main content'
+fields:
+  -
+    handle: main_content
+    field:
+      buttons:
+        - h1
+        - h2
+        - h3
+        - h4
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - table
+        - image
+        - horizontalrule
+        - alignleft
+        - aligncenter
+        - alignright
+        - title
+        - brand_color
+        - large_text
+        - two_columns
+        - three_columns
+      smart_typography: false
+      save_html: false
+      inline: false
+      toolbar_mode: fixed
+      reading_time: true
+      word_count: true
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      remove_empty_nodes: trim
+      antlers: false
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      sets:
+        links:
+          display: Links
+          instructions: null
+          icon: link
+          sets:
+            links:
+              display: Links
+              instructions: null
+              icon: link
+              fields:
+                -
+                  import: links
+            image:
+              display: Image
+              instructions: null
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  import: advanced_image
+            video:
+              display: Video
+              instructions: null
+              icon: media-webcam-video
+              fields:
+                -
+                  import: video
+            gallery:
+              display: Gallery
+              instructions: null
+              icon: media-image-picture-gallery
+              fields:
+                -
+                  import: gallery
+            columns:
+              display: Columns
+              instructions: null
+              icon: layout-three-columns
+              fields:
+                -
+                  handle: columns
+                  field:
+                    collapse: accordion
+                    previews: true
+                    fullscreen: true
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        instructions: null
+                        icon: null
+                        sets:
+                          col:
+                            display: Col
+                            instructions: null
+                            icon: alert-warning-exclamation-mark
+                            fields:
+                              -
+                                handle: content_types
+                                field:
+                                  options:
+                                    text: Text
+                                    image: Image
+                                    list: List
+                                  default: text
+                                  type: button_group
+                                  display: 'Content types'
+                                  icon: button_group
+                                  listable: hidden
+                                  instructions_position: above
+                                  visibility: visible
+                                  replicator_preview: true
+                                  hide_display: false
+                                  width: 33
+                              -
+                                handle: width
+                                field:
+                                  options:
+                                    - 25
+                                    - 33
+                                    - 50
+                                    - 66
+                                    - 75
+                                    - 100
+                                  default: 100
+                                  type: width
+                                  display: Width
+                                  icon: width
+                                  listable: hidden
+                                  instructions_position: above
+                                  visibility: visible
+                                  replicator_preview: true
+                                  hide_display: false
+                                  width: 50
+                              -
+                                handle: image
+                                field:
+                                  max_files: 1
+                                  mode: list
+                                  container: assets
+                                  restrict: false
+                                  allow_uploads: true
+                                  show_filename: true
+                                  show_set_alt: true
+                                  type: assets
+                                  display: Image
+                                  icon: assets
+                                  listable: hidden
+                                  instructions_position: above
+                                  visibility: visible
+                                  replicator_preview: true
+                                  hide_display: false
+                                  if:
+                                    content_types: 'equals image'
+                              -
+                                handle: text
+                                field:
+                                  buttons:
+                                    - h2
+                                    - h3
+                                    - h4
+                                    - bold
+                                    - italic
+                                    - unorderedlist
+                                    - orderedlist
+                                    - removeformat
+                                    - quote
+                                    - anchor
+                                    - image
+                                    - table
+                                    - alignleft
+                                    - aligncenter
+                                    - alignright
+                                    - title
+                                    - brand_color
+                                    - large_text
+                                  smart_typography: true
+                                  save_html: false
+                                  inline: false
+                                  toolbar_mode: floating
+                                  reading_time: false
+                                  word_count: false
+                                  fullscreen: true
+                                  allow_source: true
+                                  enable_input_rules: true
+                                  enable_paste_rules: true
+                                  remove_empty_nodes: false
+                                  antlers: false
+                                  link_noopener: false
+                                  link_noreferrer: false
+                                  target_blank: false
+                                  always_show_set_button: false
+                                  collapse: false
+                                  previews: true
+                                  type: bard
+                                  display: Text
+                                  icon: bard
+                                  listable: hidden
+                                  instructions_position: above
+                                  visibility: visible
+                                  replicator_preview: true
+                                  hide_display: false
+                                  if:
+                                    content_types: 'equals text'
+                              -
+                                handle: list_box
+                                field:
+                                  type: list
+                                  display: List
+                                  icon: list
+                                  listable: hidden
+                                  instructions_position: above
+                                  visibility: visible
+                                  replicator_preview: true
+                                  hide_display: false
+                                  if:
+                                    content_types: 'equals list'
+                    type: replicator
+                    display: Columns
+                    icon: replicator
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+            accordion:
+              display: Accordion
+              instructions: null
+              icon: arrows-fit-to-height
+              fields:
+                -
+                  import: accordion
+            form:
+              display: Form
+              instructions: null
+              icon: form-text-field
+              fields:
+                -
+                  handle: section_heading
+                  field: common_fields.section_heading
+                -
+                  handle: form_picker
+                  field:
+                    max_items: 1
+                    type: form
+                    display: 'Form picker'
+                    icon: form
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: conformation_page
+                  field:
+                    max_items: 1
+                    mode: default
+                    create: true
+                    collections:
+                      - pages
+                    type: entries
+                    display: 'Conformation page'
+                    icon: entries
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+            custom_code:
+              display: 'Custom code'
+              instructions: null
+              icon: null
+              fields:
+                -
+                  handle: custom_code
+                  field:
+                    theme: material
+                    mode: htmlmixed
+                    mode_selectable: true
+                    indent_type: tabs
+                    indent_size: 4
+                    key_map: default
+                    line_numbers: true
+                    line_wrapping: true
+                    antlers: false
+                    type: code
+                    display: 'Custom code'
+                    icon: code
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+            reusable_blocks:
+              display: 'Reusable blocks'
+              instructions: null
+              icon: null
+              fields:
+                -
+                  handle: reusable_blocks
+                  field:
+                    max_items: 1
+                    mode: default
+                    create: true
+                    collections:
+                      - reusable_blocks
+                    type: entries
+                    display: 'Reusable blocks'
+                    icon: entries
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+            employees:
+              display: Employees
+              instructions: null
+              icon: user-avatar
+              fields:
+                -
+                  handle: employees_list
+                  field:
+                    mode: default
+                    create: true
+                    collections:
+                      - employees
+                    type: entries
+                    display: 'Employees list'
+                    icon: entries
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+      always_show_set_button: false
+      collapse: false
+      previews: true
+      type: bard
+      display: 'Main content'
+      icon: bard
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      bts_styles_button: icon

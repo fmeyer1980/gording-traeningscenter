@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}" class="overflow-x-hidden">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{ partial:meta }}
+        {{ vite src="resources/css/site.css" }}
+        <link rel="stylesheet" href="../simple-lightbox.css">
+    </head>
+    <body class="font-base leading-normal text-dark-shade flex flex-col min-h-screen bg-light" :class="[menuIsOpen ? 'max-h-screen overflow-y-hidden' : '']" 
+    x-data="{ menuIsOpen: false, popup: false, data: {video: ''} }"
+    x-init="$watch('popup', (value) => {
+        if (value) {
+            $refs.video.play()
+        } else {
+            $refs.video.pause()
+        }
+    })">
+        {{ partial:site_head }}
+        <main class="grow w-screen">
+            {{ template_content }}
+        </main>
+        {{ partial:components/popup_video }}
+        {{ partial:pre_foot }}
+        {{ partial:site_foot }}
+<script src="../simple-lightbox.js"></script>
+<script>
+    (function() {
+        var $gallery = new SimpleLightbox('.gallery a', {});
+    })();
+</script>
+
+        {{ vite src="resources/js/site.js" }}
+        <script src="../lightbox.js"></script>
+        <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+        {{ if live_preview }}
+            <script>
+                window.addEventListener('message', async (event) => {
+                    if (event.data.name === 'statamic.preview.updated') {
+                        const text = await fetch(event.data.url).then((res) => res.text());
+                        const updated = new DOMParser().parseFromString(text, 'text/html');
+                        Alpine.morph(document.body, updated.body);
+                    }
+                });
+            </script>
+        {{ /if }}
+    </body>
+</html>

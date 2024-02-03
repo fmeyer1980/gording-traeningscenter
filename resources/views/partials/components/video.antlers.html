@@ -1,0 +1,4 @@
+<button x-on:click="popup = true, $nextTick(() => $refs.popupCloseButton.focus()), data.video = '{{ video }}'" class="relative w-full bg-dark-shade text-light-glare group block rounded-[3px] aspect-video {{ class }}">
+    {{ partial:components/picture :imagePath="video_image" ratio="9" class="w-full h-full object-cover opacity-40 group-hover:opacity-10 transition-opacity" }}
+    {{ svg src="play" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[22%] fill-current group-hover:scale-[115%] group-hover:rotate-[120deg] transition-all group-hover:text-primary-glare" }}
+</button>

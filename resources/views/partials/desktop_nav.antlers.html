@@ -1,0 +1,50 @@
+<nav class="hidden lg:block" aria-label="Primær menu">
+    <menu class="flex items-center gap-600 font-semibold font-heading">
+        {{ nav:collection:pages | include_home="true" }}
+            {{ if hide_from_main_nav == null || false }}
+                <li class="relative group py-2">
+                    {{ if button == true }}
+                        {{ typee = switch(
+                            (popup_form != false ) => "button",
+                            () => "a"
+                        )}}
+                        {{ partial:components/btn :as="typee" :linkUrl="url" :linkText="title" :linkIcon="icon" link_type="stroke" color="light" class="text-xxs" }}
+                    {{ else }}
+                        <a class="flex items-center justify-center space-x-[.6em] py-[.3em] text-300 uppercase  {{ is_current || is_parent ?= 'text-primary underline decoration-2 underline-offset-[6px] decoration-primary' }}" href="{{ url }}"><span>{{ title }}</span>{{ if children }}{{ svg src="chevron-down" class="h-[.7em]" }}{{ /if }}</a>
+                    {{ endif }}
+                    {{ if children }}
+                        <ul class="hidden absolute group-hover:block font-semibold text-100 flex-col -left-500 translate-y-2  bg-light shadow-xl text-dark min-w-[15rem] py-100 px-500 rounded-[3px] z-50 before:absolute before:w-4 before:h-4 before:-top-1 before:bg-light before:z-[99] before:rotate-45">
+                            {{ children }}
+                            <li class="py-[.7em] border-b border-dark-shade/10 last:border-0 ">
+                                <a class="border-b border-transparent flex items-center gap-[.3em] {{ is_current || is_parent ?= 'text-primary' }}" href="{{ url }}">
+                                    {{ if local_icon || iconify_icon }}
+                                        {{ size = switch(
+                                            (icon_size == "small") => "h-[.8em]",
+                                            (icon_size == "large") => "h-[1.2em]",
+                                            () => "h-[1em]"
+                                        )}}
+                                        <div class="w-[1.5em] grid place-items-center">
+                                            {{ if icon_type == "local-icon" }}
+                                                {{ svg src="assets/icons/{{ local_icon }}" width="auto" height="auto" class="{{ size }} -translate-y-[.1em]" aria-hidden="true" }}
+                                            {{ else }}
+                                                {{ iconify:iconify_icon width="auto" height="auto" class="{{ size }} -translate-y-[.1em]" }}
+                                            {{ endif }}
+                                        </div>
+                                    {{ endif }}
+                                <span class="">{{ title }}</span>
+                                </a>
+                            </li>
+                            {{ /children }}
+                        </ul>
+                    {{ /if }}
+                </li>
+            {{ /if }}
+        {{ /nav:collection:pages }}
+        {{ if site_settings.show_button and site_settings.button_text }}
+            <li>
+                {{ partial:partials/components/btn linkUrl="/" linkText="Online booking" link_type="stroke" color="primary-glare" class="hover:bg-primary-glare hover:text-dark-shade transition-all" }}
+            </li>
+        {{ endif }}
+    </menu>
+</nav>
+

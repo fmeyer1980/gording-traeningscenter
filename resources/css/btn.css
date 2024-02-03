@@ -1,0 +1,3 @@
+.btn{
+  @apply py-[1em] px-[2em] font-heading font-bold inline-flex items-center uppercase rounded-sm leading-none gap-[.5em] justify-center transition-transform shadow-transparent hover:translate-x-2 hover:shadow-xl flex-grow md:flex-grow-0;
+}

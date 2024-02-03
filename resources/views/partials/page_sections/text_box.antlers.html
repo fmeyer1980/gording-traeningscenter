@@ -1,0 +1,21 @@
+<section class="{{ class }} container-wrapper py-lg bg-light-shade text-dark-shade prose-p:text-dark-shade/80 [&_.title]:text-dark-shade [&_.list-box]:bg-light [&_.list-box_svg]:text-primary-shade {{ show_list_box ?= 'grid grid-cols-1 md:grid-cols-2 gap-lg items-start' }}" aria-label="{{ text | raw | bard_items | where:type:heading | first | bard_text }}">
+    <div class="prose-h2:text-700 prose-headings:max-w-[25ch] prose-p:max-w-[75ch] prose-headings:break-words flow-y flow-space-600 prose-h2:text-balance  {{ show_list_box == empty ? 'text-center flex flex-col items-center' : 'md:order-2' }}">
+        {{ text }}
+            {{ partial src="sets/{type}" }}
+        {{ /text }}
+    </div>
+    {{ if show_list_box }}
+    <div class="list-box p-700 space-y-400 md:order-1">
+        <h3>{{ list_headline }}</h3>
+        <ul class=" font-medium">
+            {{ list }}
+                <li class="flex items-center gap-[1em] py-[.7em]">
+                    {{ svg src="checkmark" width="auto" height="auto" class=" h-xxs w-auto" }}<span class="opacity-80">{{ value }}</span>
+                </li>
+                <li><hr class="border-0 h-px w-full bg-current opacity-5 {{ last ?= 'hidden' }}" /></li>
+
+            {{ /list }}
+        </ul>
+    </div>
+{{ /if }}
+</section>

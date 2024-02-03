@@ -1,0 +1,102 @@
+title: Intro
+fields:
+  -
+    handle: text
+    field:
+      buttons:
+        - h1
+        - bold
+        - italic
+        - removeformat
+        - anchor
+        - title
+        - brand_color
+        - large_text
+      smart_typography: true
+      save_html: false
+      inline: false
+      toolbar_mode: floating
+      reading_time: false
+      word_count: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      remove_empty_nodes: false
+      antlers: false
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      always_show_set_button: false
+      collapse: false
+      previews: true
+      type: bard
+      display: Text
+      icon: bard
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    handle: stats
+    field:
+      fields:
+        -
+          handle: title
+          field:
+            input_type: text
+            antlers: false
+            type: text
+            display: Title
+            icon: text
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+            replicator_preview: true
+            hide_display: false
+        -
+          handle: number
+          field:
+            input_type: text
+            antlers: false
+            type: text
+            display: Number
+            icon: text
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+            replicator_preview: true
+            hide_display: false
+      mode: table
+      reorderable: true
+      fullscreen: true
+      type: grid
+      display: Stats
+      icon: grid
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      add_row: 'Add stats'
+  -
+    handle: links
+    field: links.links
+  -
+    handle: image
+    field:
+      max_files: 1
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: 'Background media'
+      icon: assets
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false

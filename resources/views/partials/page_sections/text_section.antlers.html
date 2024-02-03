@@ -1,0 +1,28 @@
+<article>
+    <div class="flex flex-col items-center text-center flow-y flow-space-400">
+        <h2 class="max-w-[25ch]">{{ headline }}</h2>
+        {{ if text }}
+        <div class="max-w-[75ch] ">
+            {{ text }}
+        </div>
+        {{ endif }}
+        {{ if text_icons }}
+       
+            <ul class="flex flex-col md:flex-row gap-200 md:gap-600 items-center">
+                {{ text_icons }}
+                <li class="flex items-center gap-[.6em] ">
+                    {{ iconify:icon class="h-[2em] w-max" }}
+                    <p>{{ title }}</p>
+                </li>
+                {{ /text_icons }}
+            </ul>
+        {{ endif }}
+        {{ if links }}
+            <div class="flex gap-gutter flex-wrap flow-space-600">
+                {{ links }}
+                    {{ partial:components/btn :linkUrl="url" :linkText="text"  class="grow md:grow-0" }}
+                {{ /links }}
+            </div>
+        {{ endif }}
+    </div>
+</article>

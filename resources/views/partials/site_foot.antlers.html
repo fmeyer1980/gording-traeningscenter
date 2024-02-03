@@ -1,0 +1,27 @@
+<footer class="container-wrapper bg-dark-shade text-light/80">
+    {{ if site_settings:benefits }}
+        <ul class="font-secondary text-600 flex flex-col items-center md:flex-row gap-gutter border-b border-light/10 py-800">
+            {{ site_settings:benefits }}
+                <li class="flex items-center gap-[.7em] grow h4">
+                    {{ svg src="checkmark" width="auto" height="auto" class="text-primary h-[.8em] w-auto shrink-0" }}<span>{{ value }}</span>
+                </li>
+            {{ /site_settings:benefits }}
+        </ul>
+    {{ endif }}
+    <div class="flex flex-col items-center text-center flow-y flow-space-600 py-lg">
+        {{ svg src="logo" class="h-xxl text-light" }}
+        <p class=" text-light/60 max-w-[40ch] text-xs">© <span id="copyright"></span> Gørding træningcenter. All right reserved. Webdesign og udvikling af <a class="font-semibold hover:text-primary" target="_blank" href="https://webhusetballum.dk/">fokus.design</a></p>
+    </div>
+
+    <nav class="full-bleed bg-dark py-gutter text-400 font-heading font-semibold uppercase" aria-label="Footer menu">
+        <ul class="container-wrapper flex flex-wrap items-center gap-x-[1.5em] gap-y-1 place-content-center">
+            {{ nav:collection:pages include_home="true" }}
+                {{ if hide_from_main_nav == null || false }}
+                    <li class="">
+                        <a class="{{ is_current || is_parent ?= 'text-primary' }}" href="{{ url }}">{{ title }}</a>
+                    </li>
+                {{ /if }}
+            {{ /nav:collection:pages }}
+        </ul>
+    </nav>
+</footer>

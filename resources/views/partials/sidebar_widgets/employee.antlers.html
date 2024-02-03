@@ -1,0 +1,22 @@
+<div class="bg-light-glare p-600 rounded">
+    {{ if title }}
+        <p class="h5 normal-case mb-200">{{ title }}</p>
+    {{ endif }}
+    <ul class=" divide-y divide-light-shade text-xs">
+        {{ employee }}
+            <li class="py-400 first-of-type:pt-0 last-of-type:pb-0">
+                <p class="font-bold text-sm {{ position == empty ?= 'mb-2' }}">{{ name }}</p>
+                {{ if phone }}
+                    <p class="opacity-70 mb-2">{{ position }}</p>
+                {{ endif }}
+                {{ if phone }}
+                    <a class="flex items-center gap-[.5em] font-medium" href="tel:{{ phone }}">{{ svg src="phone" class="w-[.8em]" }}<span>{{ phone }}</span></a>
+                {{ endif }}
+                {{ if email }}
+                    <a class="flex items-center gap-[.5em] font-medium" href="mailto:{{ email }}">{{ svg src="email" class="w-[.8em]" }}<span>{{ email }}</span></a>
+                {{ endif }}
+            </li>
+        {{ /employee }}
+    </ul>
+        
+</div>

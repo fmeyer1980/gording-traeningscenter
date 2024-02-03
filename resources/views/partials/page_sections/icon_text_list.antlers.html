@@ -1,0 +1,17 @@
+<section class="full-bleed bg-light py-lg">
+    <div class="container-wrapper">
+        {{ partial:components/section_heading class="mb-900" }}
+        <ul class="auto-grid auto-grid-md gap-800">
+            {{ icon_text_list }}
+                <li class="flow-y flow-space-075em">
+                    <div class="w-950 h-950 bg-light-shade text-primary-shade flex justify-center items-center rounded-sm">
+                        {{ svg src="assets/icons/{{ icon }}" width="auto" height="auto" class="h-[60%] w-[50%] fill-slate-500" aria-hidden="true" }}
+                    </div>
+                    <h3 class="h5">{{ title }}</h3>
+                    <p class="text-xs text-pretty">{{ text }}</p>
+                </li>
+            {{ /icon_text_list }}
+        </ul>
+    </div>
+
+</section>

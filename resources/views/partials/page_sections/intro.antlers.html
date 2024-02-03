@@ -1,0 +1,32 @@
+<section class="relative bg-dark text-light-glare" aria-labelledby="{{ intro_text | raw | bard_items | where:type:heading | first | bard_text }}">
+    <div class="container-wrapper relative z-20 intro__inner-wrapper py-xl md:pb-xxl prose-h1:text-850 md:prose-h1:text-950 prose-h1:max-w-[25ch] prose-p:max-w-[55ch] [&_p:not(.text-large,.title)]:text-light-glare/80 flow-y flow-space-600">
+        {{ intro_text }}
+        <ul class="flex flex-wrap flow-space-800 gap-500 ">
+            {{ intro_stats }}
+            <li class=" leading-none {{ last ? 'pr-[10px]' : 'border-r border-light-glare/10 pr-500' }}">
+                <b class="font-heading text-700">{{ number }}</b>
+                <p class="text-xs opacity-70">{{ title }}</p>
+            </li>
+            {{ /intro_stats }}
+            {{ intro_links }}
+                {{ typee = switch(
+                    (url | ends_with('mp4')) => "button",
+                    () => "a"
+                )}}
+                <li>
+                    {{ partial:components/btn :as="typee" :linkUrl="url" :linkText="text" :linkIcon="icon" class="grow md:grow-0 h-full" xData="popup = true, $nextTick(() => $refs.popupCloseButton.focus()), data.video = '{{ url }}'" }}
+                </li>
+            {{ /intro_links }}
+        </ul>
+    </div>
+    <div class="absolute top-0 right-0 w-[60%] h-full before:absolute before:bg-gradient-to-r before:from-dark before:via-dark/80 before:via-30% before:to-dark/30 md:before:to-dark/0 before:to-70% before:inset-0 before:z-10">
+        {{ if intro_image | ends_with('mp4') }}
+            <video x-ref="video" loop="loop" muted loop="loop" preload="auto" playsinline autoplay class="w-full h-full object-cover">
+                <source src="{{ intro_image }}" type="video/mp4">
+                <source src="{{ intro_image }}" type="video/mov">
+            </video>
+        {{ else }}
+            {{ partial:components/picture mdRatio="9" :imagePath="intro_image" class="w-full h-full object-cover image-overlay"}}
+        {{ endif }}
+    </div>
+</section>

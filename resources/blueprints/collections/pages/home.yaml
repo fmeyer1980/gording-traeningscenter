@@ -1,0 +1,53 @@
+hide: true
+title: Home
+tabs:
+  intro:
+    display: Intro
+    sections:
+      -
+        fields:
+          -
+            import: intro
+            prefix: intro_
+  page_sections:
+    display: 'Page sections'
+    sections:
+      -
+        fields:
+          -
+            import: page_sections
+  seo:
+    display: Seo
+    sections:
+      -
+        fields:
+          -
+            import: meta
+            prefix: meta_
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true

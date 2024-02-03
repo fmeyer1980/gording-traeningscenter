@@ -1,0 +1,63 @@
+title: 'Text section'
+fields:
+  -
+    handle: headline
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Headline
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: text
+    field: common_fields.simple_text
+    config:
+      display: Text
+  -
+    handle: text_icons
+    field:
+      fields:
+        -
+          handle: icon
+          field:
+            store_as: svg_data
+            type: iconify
+            display: Icon
+            icon: iconify
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+            replicator_preview: true
+            hide_display: false
+        -
+          handle: title
+          field:
+            input_type: text
+            antlers: false
+            type: text
+            display: Title
+            icon: text
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+            replicator_preview: true
+            hide_display: false
+      mode: table
+      reorderable: true
+      fullscreen: true
+      type: grid
+      display: 'Text icons'
+      icon: grid
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: links
+    field: links.links

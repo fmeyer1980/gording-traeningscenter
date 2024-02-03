@@ -1,0 +1,5 @@
+<div class="bg-light-glare p-600 flow-y flow-space-200 rounded">
+    <p class="font-heading text-400 font-bold">{{ title }}</p>
+    <p class="text-xs opacity-70">{{ text }}</p>
+    {{ partial:components/form :form_picker="form_picker:handle" :redirect="confirmation_page:url" link_type="solid" color="primary" linkText="Send besked" class="text-sm w-full grow cursor-pointer"  }} 
+</div>

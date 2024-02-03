@@ -1,0 +1,24 @@
+{{ if featured_image }}
+    {{ partial:components/picture :imagePath="featured_image" mdRatio="6" xxlRatio="4" }}
+{{ endif }}
+<article class="container-wrapper @container grid grid-cols-1 gap-y-gutter items-start {{ featured_image ? 'pt-950 pb-lg' : 'py-lg' }} {{ sidebar_widgets ?= 'md:grid-cols-[1fr,22rem] gap-x-lg' }}">
+    <div class="page-content dark flow-y">
+        {{ if main_content | raw | bard_html | contains:h1 }}
+        {{ main_content }}
+            {{ partial src="sets/{type}" }}
+        {{ /main_content }}
+        {{ else }}
+        <h1>{{ title }}</h1>
+        {{ main_content }}
+            {{ partial src="sets/{type}" }}
+        {{ /main_content }}
+        {{ endif }}
+    </div>
+    {{ if sidebar_widgets }}
+        <aside class="sticky top-gutter flex flex-col gap-gutter {{ featured_image ?= 'md:-mt-xl' }}" role="Aside" aria-label="Main content sidebar">
+            {{ sidebar_widgets }}
+                {{ partial src="sidebar_widgets/{type}" typeClass="{type | slugify}" }}
+            {{ /sidebar_widgets }}
+        </aside>
+    {{ endif }}
+</article>

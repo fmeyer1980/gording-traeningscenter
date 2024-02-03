@@ -1,0 +1,46 @@
+<div class="bg-light-glare p-600 pb-100 rounded">
+    {{ if title }}
+        <p class="h5 normal-case mb-2">{{ title }}</p>
+    {{ endif }}
+    {{ if text }}
+        <p class="text-xs opacity-70 mb-100">{{ text }}</p>
+    {{ endif }}
+    <ul class="[&>_li>a]:py-[.6em] divide-y text-sm font-medium">
+        {{ if all_sub_pages == true }}
+            {{ nav :from="segment_1" }}
+                {{ unless no_results }}
+                    <li class="">
+                        <a class="flex gap-[.5em] items-center {{ is_current ?= 'bg-primary w-[calc(100%+2em)] pl-[1em] -translate-x-[1em] rounded-sm' }}" href="{{ url }}">
+                            {{ if local_icon || iconify_icon }}
+                                {{ size = switch(
+                                    (icon_size == "small") => "h-[.8em]",
+                                    (icon_size == "large") => "h-[1.2em]",
+                                    () => "h-[1em]"
+                                )}}
+                                <div class="w-[1.5em] grid place-items-center">
+                                    {{ if icon_type == "local-icon" }}
+                                        {{ svg src="assets/icons/{{ local_icon }}" width="auto" height="auto" class="{{ size }} -translate-y-px" aria-hidden="true" }}
+                                    {{ else }}
+                                        {{ iconify:iconify_icon width="auto" height="auto" class="{{ size }} -translate-y-px" }}
+                                    {{ endif }}
+                                </div>
+                            {{ endif }}
+                            <span class="">{{ title }}</span>
+                        </a>
+                    </li>
+                {{ /unless }}
+            {{ /nav }}
+        {{ else }}
+            {{ custom_links }}
+                <li class="">
+                    <a class="flex {{ is_current ?= 'bg-primary font-semibold' }}" href="{{ link }}">
+                        {{ if icon }}
+                            {{ svg src="/icons/{{ icon }}" class="w-400" }}
+                        {{ endif }}
+                        <span class="">{{ text }}</span>
+                    </a>
+                </li>
+            {{ /custom_links }}
+        {{ endif }}
+    </ul>
+</div>

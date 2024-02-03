@@ -1,0 +1,30 @@
+<header>
+    <ul class="container-wrapper bg-primary-glare h-700 text-dark-shade flex justify-end items-center text-xxs gap-100 divide-x divide-dark-shade/10 [&>_li]:place-items-center [&>_li]:h-full [&>_li]:last-of-type:pl-100 relative z-[90]">
+        <li class="grid"><a class="flex gap-[.5em] items-center" href="">{{ svg src="phone" class="h-[1em]" }}<span>{{ site_settings.phone }}</span></a></li>
+        <li class="grid"><a class="flex gap-[.5em] items-center" href="">{{ svg src="email" class="h-[1em]" }}<span>{{ site_settings.email }}</span></a></li>
+        {{ site_settings.socialmedia_links }}
+            <li class="hidden md:grid"><a class="" href="{{ prefix }}{{ handle }}">{{ svg src="socialmedia/{type}" class="h-[1em]" }}</a></li>
+        {{ /site_settings.socialmedia_links }}
+    </ul>
+    <div class="container-wrapper bg-dark ">
+        <div class="relative w-full h-950 flex text-light-glare justify-end items-center">
+            <a class="mr-auto w-xxl h-xxl md:h-xl bg-primary-shade grid place-items-center border-b-[6px] border-primary absolute -top-700 left-0 z-[99]" href="/" aria-current="Page" aria-label="Gå til {{ site_settings.site_navn }}">
+                {{ svg src="logo" class="h-[70%]" }}
+            </a>
+            {{ partial:desktop_nav }}
+            <button aria-label="Primære navigation knap" type="button" class="site-head__dropdown-nav shrink-0 lg:hidden z-[99] text-light-glare" :class="menuIsOpen ? 'is-open' : ''" @click="menuIsOpen = !menuIsOpen" @keydown.escape="isOpen = false"></button>
+        </div>
+    </div>
+    <div class="fixed inset-0 bg-dark-glare z-[80] flex justify-center pt-[calc(var(--size-xxl)+var(--size-700))] lg:hidden" 
+    x-cloak 
+    x-show="menuIsOpen"
+    x-transition:enter="transition ease-out duration-100"
+    x-transition:enter-start="opacity-0 -translate-y-400"
+    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition ease-in duration-100"
+    x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 -translate-y-400"
+>
+    {{ partial:main_nav_mobil }}
+</div>
+</header>

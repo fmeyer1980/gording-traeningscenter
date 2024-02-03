@@ -1,0 +1,17 @@
+<section class="full-bleed bg-light py-lg">
+    <div class="container-wrapper">
+        {{ partial:components/section_heading class="mb-900" }}
+        <ul class="entry-icons">
+            {{ if list_type == "dynamic" }}
+                {{ dynamic_list }}
+                {{ partial:components/entry-icon_card :link="url" }}
+                {{ /dynamic_list }}
+            {{ else }}
+            {{ list }}
+                {{ partial:components/entry-icon_card }}
+            {{ /list }}
+            {{ endif }}
+        </ul>
+    </div>
+
+</section>

@@ -1,0 +1,80 @@
+title: Multicolumn
+fields:
+  -
+    handle: multicolumn
+    field:
+      collapse: accordion
+      previews: true
+      fullscreen: true
+      sets:
+        item:
+          display: Item
+          instructions: null
+          icon: null
+          sets:
+            column:
+              display: Column
+              instructions: null
+              icon: addon-boxes-stack
+              fields:
+                -
+                  handle: show_icon
+                  field:
+                    default: false
+                    type: toggle
+                    display: 'Show icon'
+                    icon: toggle
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                    replicator_preview: true
+                -
+                  handle: iconify_field
+                  field:
+                    store_as: svg_data
+                    type: iconify
+                    display: Iconify
+                    icon: iconify
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    if:
+                      show_icon: 'equals true'
+                -
+                  handle: headline
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Headline
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                -
+                  handle: text
+                  field: common_fields.simple_text
+                  config:
+                    display: Text
+                -
+                  handle: link
+                  field: links.links
+                  config:
+                    display: Link
+                    max_rows: 1
+                -
+                  handle: color
+                  field: common_fields.color
+      type: replicator
+      display: Multicolumn
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      max_sets: 3
+      replicator_preview: true

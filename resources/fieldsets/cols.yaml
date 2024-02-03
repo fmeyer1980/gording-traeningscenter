@@ -1,0 +1,37 @@
+title: Cols
+fields:
+  -
+    handle: cols
+    field:
+      collapse: false
+      previews: true
+      fullscreen: true
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          instructions: null
+          icon: null
+          sets:
+            image:
+              display: Image
+              instructions: null
+              icon: media-image-picture-gallery
+              fields: {  }
+            video:
+              display: Video
+              instructions: null
+              icon: media-webcam-video
+              fields: {  }
+            list:
+              display: List
+              instructions: null
+              icon: media-playlist
+              fields: {  }
+      type: replicator
+      display: Cols
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false

@@ -1,0 +1,7 @@
+<div class="grid grid-cols-12 gap-gutter flow-space-800">
+    {{ columns }}
+        <div class="{{ content_types == "text" ?= 'flow-y flow-space-1em' }}  col-span-12 {{ width == '25' ?= 'md:col-span-3' }}{{ width == '33' ?= 'md:col-span-4' }}{{ width == '50' ?= 'md:col-span-6' }}{{ width == '66' ?= 'md:col-span-8' }}{{ width == '75' ?= 'md:col-span-9' }}{{ width == '100' ?= 'md:col-span-12' }}">
+            {{ partial src="sets/{content_types}" }}
+        </div>
+    {{ /columns }}
+</div>

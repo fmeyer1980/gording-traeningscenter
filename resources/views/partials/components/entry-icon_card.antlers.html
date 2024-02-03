@@ -1,0 +1,22 @@
+{{ size = switch(
+    (icon_size == "small") => "h-[40%]",
+    (icon_size == "large") => "h-[60%]",
+    () => "h-1/2"
+)}}
+<li class="entry-icons__card group">
+    <div class="entry-icons__card__icon-wrapper {{ link != empty ?= ' transition-colors ease-out duration-300 group-hover:bg-primary-shade group-hover:text-light-glare' }}">
+        {{ if icon_type == "local-icon" }}
+            {{ svg src="assets/icons/{{ local_icon }}" width="auto" height="auto" class="{{ size }}" aria-hidden="true" }}
+        {{ else }}
+            {{ iconify:iconify_icon width="auto" height="auto" class="{{ size }}" }}
+        {{ endif }}
+    </div>
+    {{ if link != empty }}
+        <a class="link-parent block" href="{{ link }}">
+        {{ endif }}
+            <h3 class="h5">{{ title }}</h3>
+        {{ if link != empty }}
+        </a>
+    {{ endif }}
+    <p class="text-xs text-pretty flow-space-half-em opacity-70">{{ text ? text : (main_content | raw | bard_items | where:type:paragraph | bard_text | safe_truncate:75) }}...</p>
+</li>

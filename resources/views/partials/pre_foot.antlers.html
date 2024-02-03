@@ -1,0 +1,21 @@
+<section class="pre-footer relative pt-[clamp(10rem,calc(16vw+16vh),35rem)] px-gutter" aria-label="{{ site_settings:cta_content | raw | bard_items | where:type:heading | first | bard_text }}">
+    {{ partial:components/picture :imagePath="site_settings:cta_image" ratio="16" mdRatio="12" class="absolute top-0 right-0 h-full w-full before:absolute before:bg-gradient-to-t from-dark-shade via-dark-shade/70 to-dark-shade/10 before:inset-0" }}
+    <div class="max-w-[var(--container-width)] mx-auto relative z-10 bg-primary-shade text-light-glare px-900 py-lg rounded-sm {{ site_settings:cta_show_form ?= 'md:grid md:grid-cols-2 md:gap-lg'}}">
+        <div class="prose-h2:text-700 prose-headings:max-w-[25ch] prose-p:max-w-[75ch] [&_p:not(.text-large,.title)]:text-light-glare/80 flow-y flow-space-600 {{ site_settings:cta_show_form != 'true' ?= 'flex flex-col items-center text-center'}}  ">
+            {{ site_settings:cta_content }}
+                {{ partial src="sets/{type}" }}
+            {{ /site_settings:cta_content }}
+            <ul class="leading-none font-heading text-450 font-bold flex flex-wrap gap-x-700 gap-y-2 flow-space-700">
+                <li>
+                    <a class="flex items-center space-x-[.4em]" href="">{{ svg src="phone" class="w-[.8em]" }}<span>{{ site_settings:phone }}</span></a>
+                </li>
+                <li>
+                    <a class="flex items-center space-x-[.4em]" href="">{{ svg src="email" class="w-[.8em]" }}<span>{{ site_settings:email }}</span></a>
+                </li>
+            </ul>
+        </div>
+        {{ if site_settings:cta_form_picker != empty }}
+            {{ partial:components/form :form_picker="site_settings:cta_form_picker:handle" :redirect="site_settings:cta_conformation_page:url" link_type="solid" color="primary-glare" linkText="Send besked" class="text-sm w-full grow cursor-pointer" }}
+        {{ /if }}
+    </div>
+</section>

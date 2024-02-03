@@ -1,0 +1,25 @@
+<ul class="auto-grid auto-grid-md gap-gutter flow-space-none text-sm">
+    {{ employees_list }}
+        <li class=" flex flex-col !mt-0 flow-y flow-space-400">
+            <div class=" aspect-square bg-light-shade grid place-items-center">
+                {{ if image }}
+                    {{ partial:components/image :imagePath="image" class="h-full w-full object-cover" }}
+                {{ else }}
+                    <b>Billeder kommer snart</b>
+                {{ endif }}
+            </div>
+            <div>
+                <p class="h5">{{ title }}</p>
+                <p class="opacity-70">{{ position }}</p>
+            </div>
+            <div class="flow-space-xxs">
+                {{ if phone }}
+                <a class="flex items-center gap-[.5em] font-medium !no-underline !text-dark-shade" href="tel:{{ phone }}">{{ svg src="phone" class="w-[.8em]" }}<span>{{ phone }}</span></a>
+            {{ endif }}
+            {{ if email }}
+                <a class="flex items-center gap-[.5em] font-medium !no-underline !text-dark-shade" href="mailto:{{ email }}">{{ svg src="email" class="w-[.8em]" }}<span>{{ email }}</span></a>
+            {{ endif }}
+            </div>
+        </li>
+    {{ /employees_list }}
+</ul>

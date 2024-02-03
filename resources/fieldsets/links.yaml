@@ -1,0 +1,132 @@
+title: Links
+fields:
+  -
+    handle: links
+    field:
+      fields:
+        -
+          handle: url
+          field:
+            collections:
+              - pages
+            container: assets
+            display: Url
+            type: link
+            icon: link
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+            always_save: false
+            width: 50
+        -
+          handle: text
+          field:
+            input_type: text
+            antlers: false
+            display: Text
+            type: text
+            icon: text
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+            always_save: false
+            width: 25
+        -
+          handle: icon
+          field:
+            store_as: svg_data
+            type: iconify
+            display: Icon
+            icon: iconify
+            width: 25
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+            replicator_preview: true
+            hide_display: false
+        -
+          handle: show_settings
+          field:
+            mode: button
+            display: 'Show settings'
+            type: revealer
+            icon: revealer
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+        -
+          handle: link_type
+          field:
+            options:
+              default: default
+              solid: Solid
+              stroke: Stroke
+            default: default
+            display: 'Link type'
+            type: button_group
+            icon: button_group
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+            width: 33
+            hide_display: false
+            if:
+              show_settings: 'equals true'
+        -
+          handle: color
+          field: common_fields.color
+          config:
+            options:
+              primary-glare: 'Primary light'
+              primary: Primary
+              primary-shade: 'Primary dark'
+              dark: Black
+              light: White
+            default: primary
+            width: 33
+            if:
+              show_settings: 'equals true'
+        -
+          handle: flip_content
+          field:
+            default: false
+            type: toggle
+            display: 'Flip content'
+            icon: toggle
+            width: 33
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+            hide_display: false
+            if:
+              show_settings: 'equals true'
+      mode: stacked
+      add_row: 'Tilføj link'
+      reorderable: true
+      display: Links
+      type: grid
+      icon: grid
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+      max_rows: 2
+      fullscreen: true
+      hide_display: false
+      replicator_preview: true
+  -
+    handle: links_alignment
+    field:
+      options:
+        justify-start: Left
+        justify-center: Center
+        justify-end: Right
+      default: justify-start
+      type: button_group
+      display: 'Links alignment'
+      icon: button_group
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false

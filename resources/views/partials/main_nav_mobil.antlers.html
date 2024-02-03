@@ -1,0 +1,33 @@
+<nav class="mobil-menu w-full mx-gutter overflow-y-scroll px-1" x-data="{selected:null}">
+    <menu class="font-semibold text-650 divide-y divide-light-glare/10 text-light-glare font-heading ">
+        {{ nav:collection:pages }}
+            {{ if hide_from_main_nav == null || false }}
+                <li class="relative py-100">
+                    {{ if children }}
+                        <div class="relative flex flex-wrap items-center w-full">
+                            <a class="{{ is_current || is_parent ?= 'text-primary-glare opacity-100' }}" href="{{ url }}">{{ title }}</a>
+                            {{ if children }}{{ svg src="arrow-right" class="h-[.7em] translate-y-[.08em] ml-auto cursor-pointer rotate-90" @click="selected !== {{ count }} ? selected = {{ count }} : selected = null" }}{{ /if }}
+                        </div>
+                        <ul 
+                        class="max-h-0 overflow-hidden space-y-200"
+                        x-cloak
+                        x-ref="container{{ count }}"
+                        x-bind:style="selected == {{ count }} ? 'max-height: 100%; padding-block: .5em;' : ''">
+                            {{ children }}
+                            <li class="text-[.6em]">
+                                <a class="border-b border-transparent font-normal {{ is_current ?= 'text-primary !border-primary' }}" href="{{ url }}">{{ title }}</a>
+                            </li>
+                            {{ /children }}
+                        </ul>
+                    {{ else }}
+                        <a class="{{ is_current || is_parent ?= 'text-primary-glare opacity-100' }}" href="{{ url }}">{{ title }}</a>
+                    {{ /if }}
+                </li>
+            {{ /if }}
+        {{ /nav:collection:pages }}
+    </menu>
+{{ if site_settings.show_button and site_settings.button_text }}
+        {{ partial:partials/components/btn :linkUrl="site_settings.button_link" :linkText="site_settings.button_text" link_type="solid" color="primary-glare" class="hover:bg-primary-glare hover:text-dark-shade transition-all mt-600 w-full" }}
+{{ endif }}
+
+</nav>

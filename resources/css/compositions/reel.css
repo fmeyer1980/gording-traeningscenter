@@ -1,0 +1,38 @@
+.reel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+.reel > * {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    /* animation: reel-ani .1s ease forwards; */
+}
+
+.reel::-webkit-scrollbar {
+    @apply h-[18px] outline outline-1 outline-dark-shade/10;
+}
+
+.reel::-webkit-scrollbar-thumb {
+    @apply bg-dark border-4 border-solid border-current ;
+}
+
+/* .reel::-webkit-scrollbar-track {
+
+} */
+
+/* .reel:hover::-webkit-scrollbar-thumb {
+    @apply bg-dark-glare rounded-full;
+} */
+
+@keyframes reel-ani {
+    0%{
+        scroll-snap-align: none;
+    }
+    100%{
+        scroll-snap-align: start;
+    }
+}

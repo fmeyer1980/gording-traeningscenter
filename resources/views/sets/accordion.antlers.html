@@ -1,0 +1,21 @@
+<div class="space-y-300 flow-space-800 {{ if last }}!mb-0{{ /if }}" x-data="{selected:null}">
+    {{ list }}
+    <div class="bg-light rounded-[3px]">
+        <button class="py-300 px-600 text-200 font-bold w-full flex items-center justify-between text-left" @click="selected !== {{ count }} ? selected = {{ count }} : selected = null">
+            {{ headline }}
+            {{ svg src="plus" x-cloak x-bind:style="selected == {{ count }} ? 'display: none;' : 'display: block;'" class="h-xxs fill-current" }}
+            {{ svg src="minus" x-cloak x-bind:style="selected == {{ count }} ? 'display: block;' : 'display: none;'" class="h-xxs fill-current" }}
+        </button>
+        <div 
+            class="relative overflow-hidden transition-all max-h-0 duration-300"
+            x-cloak
+            x-ref="container{{ count }}"
+            x-bind:style="selected == {{ count }} ? 'max-height: ' + $refs.container{{ count }}.scrollHeight + 'px' : ''"
+        >
+            <div class="page-content flow-y pb-600 px-600">
+                {{ text }}
+            </div>
+        </div>
+    </div>
+    {{ /list }}
+</div>

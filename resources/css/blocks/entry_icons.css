@@ -1,0 +1,11 @@
+.entry-icons{
+    @apply auto-grid auto-grid-md gap-800;
+}
+
+.entry-icons__card{
+    @apply flow-y flow-space-400 relative;
+}
+
+.entry-icons__card__icon-wrapper{
+    @apply w-950 h-950 bg-light-shade text-primary-shade flex justify-center items-center rounded-sm;
+}

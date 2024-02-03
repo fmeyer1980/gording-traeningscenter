@@ -1,0 +1,28 @@
+{{ link_style = switch(
+    (link_type == 'default' and color == 'primary-glare') => "text-primary-glare !p-0 hover:!shadow-none",
+    (link_type == 'default' and color == 'primary') => "text-primary !p-0 hover:!shadow-none",
+    (link_type == 'default' and color == 'primary-shade') => "text-primary-shade !p-0 hover:!shadow-none",
+    (link_type == 'default' and color == 'dark') => "text-dark !p-0 hover:!shadow-none",
+    (link_type == 'default' and color == 'light') => "text-light !p-0 hover:!shadow-none",
+
+    (link_type == 'solid' and color == 'primary-glare') => "bg-primary-glare text-dark-shade",
+    (link_type == 'solid' and color == 'primary') => "bg-primary text-dark-shade",
+    (link_type == 'solid' and color == 'primary-shade') => "bg-primary-shade text-light-glare",
+    (link_type == 'solid' and color == 'dark') => "bg-dark text-light-glare",
+    (link_type == 'solid' and color == 'light') => "bg-light-glare text-dark-shade",
+
+    (link_type == 'stroke' and color == 'primary-glare') => "ring-1 ring-inset ring-primary-glare bg-transparent text-primary-glare",
+    (link_type == 'stroke' and color == 'primary') => "ring-1 ring-inset ring-primary bg-transparent text-primary",
+    (link_type == 'stroke' and color == 'primary-shade') => "ring-1 ring-inset ring-primary-shade bg-transparent text-primary-shade",
+    (link_type == 'stroke' and color == 'dark') => "ring-1 ring-inset ring-dark bg-transparent text-dark",
+    (link_type == 'stroke' and color == 'light') => "ring-1 ring-inset ring-light-glare bg-transparent text-light-glare",
+)}}
+<{{ as or 'a' }} 
+    class="btn light-glare {{ flip_content ?= 'flex-row-reverse' }} {{ link_style }} {{ class }}"
+    {{ if linkUrl }}href="{{ linkUrl or '/' }}"{{ /if }}
+    {{ if xData }} x-on:click="{{ xData }}" {{ /if }}>
+    <span>{{ linkText or 'Læs mere' }}</span>
+    {{ if icon }}
+        {{ iconify:icon class="h-[1em] w-max" }}
+    {{ /if }}
+</{{ as or 'a' }}>

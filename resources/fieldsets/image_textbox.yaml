@@ -1,0 +1,156 @@
+title: 'Image text box'
+fields:
+  -
+    handle: text
+    field:
+      collapse: accordion
+      always_show_set_button: false
+      previews: true
+      smart_typography: false
+      sets:
+        links:
+          display: Links
+          fields:
+            -
+              handle: links
+              field: links.links
+        two_col_text:
+          display: 'Two col text'
+          fields:
+            -
+              handle: text_col_1
+              field:
+                collapse: false
+                always_show_set_button: false
+                previews: true
+                smart_typography: false
+                buttons:
+                  - h3
+                  - bold
+                  - italic
+                  - removeformat
+                  - anchor
+                save_html: true
+                inline: false
+                toolbar_mode: fixed
+                link_noopener: false
+                link_noreferrer: false
+                target_blank: false
+                reading_time: false
+                fullscreen: true
+                allow_source: true
+                enable_input_rules: true
+                enable_paste_rules: true
+                antlers: false
+                remove_empty_nodes: false
+                display: 'Text col 1'
+                type: bard
+                icon: bard
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+            -
+              handle: text_col_2
+              field:
+                collapse: false
+                always_show_set_button: false
+                previews: true
+                smart_typography: false
+                buttons:
+                  - h3
+                  - bold
+                  - italic
+                  - removeformat
+                  - anchor
+                save_html: true
+                inline: false
+                toolbar_mode: fixed
+                link_noopener: false
+                link_noreferrer: false
+                target_blank: false
+                reading_time: false
+                fullscreen: true
+                allow_source: true
+                enable_input_rules: true
+                enable_paste_rules: true
+                antlers: false
+                remove_empty_nodes: false
+                display: 'Text col 2'
+                type: bard
+                icon: bard
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - horizontalrule
+        - title
+        - brand_color
+        - large_text
+      save_html: false
+      inline: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      antlers: false
+      remove_empty_nodes: false
+      display: Text
+      type: bard
+      icon: bard
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+  -
+    handle: image
+    field:
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      max_files: 1
+      display: Image
+      type: assets
+      icon: assets
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+  -
+    handle: flip_image
+    field:
+      default: false
+      display: 'Flip image'
+      type: toggle
+      icon: toggle
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+  -
+    handle: revers
+    field:
+      default: false
+      display: 'Revers image and content'
+      type: toggle
+      icon: toggle
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+  -
+    handle: section_color
+    field: common_fields.color
+    config:
+      display: 'Section color'

@@ -1,0 +1,31 @@
+<section class="{{ class }} md:bg-gradient-to-r md:from-light-glare md:from-50% md:to-50%">
+    <ul class=" flex flex-wrap md:flex-nowrap">
+        {{ multicolumn }}
+            {{ colors = switch(
+                (color == 'primary-glare') => "bg-primary-glare border-primary-glare text-dark-shade [&_.icon]:bg-primary-shade [&_.icon]:text-light-glare",
+                (color == 'primary') => "bg-primary border-primary text-dark-shade [&_.icon]:bg-primary-shade [&_.icon]:text-light-glare",
+                (color == 'primary-shade') => "bg-primary-shade border-primary-shade text-light-glare [&_.icon]:bg-light [&_.icon]:text-dark-shade",
+                (color == 'dark-glare') => "bg-dark-glare border-dark-glare text-light-glare [&_.icon]:bg-light [&_.icon]:text-dark-shade",
+                (color == 'dark') => "bg-dark border-dark text-light-glare [&_.icon]:bg-light [&_.icon]:text-dark-shade",
+                (color == 'dark-shade') => "bg-dark-shade border-dark-shade text-light-glare [&_.icon]:bg-light [&_.icon]:text-dark-shade",
+                (color == 'light-glare') => "bg-light-glare border-light-glare text-dark-glare [&_.icon]:bg-primary-shade [&_.icon]:text-light-glare",
+                (color == 'light') => "bg-light border-light text-dark-glare [&_.icon]:bg-primary-shade [&_.icon]:text-light-glare",
+                (color == 'light-shade') => "bg-light-shade border-light-shade text-dark-glare [&_.icon]:bg-primary-shade [&_.icon]:text-light-glare",
+            )}}
+            <li class="{{ colors }} p-900 {{ first ?= 'md:pl-container md:border-l-gutter' }} {{ last ?= 'md:pr-container md:border-r-gutter' }} flow-y flow-space-200 prose-p:opacity-70">
+                {{ if show_icon and iconify_field }}
+                    <div class="icon h-850 w-850 flex items-center justify-center rounded-[3px]">
+                        {{ iconify:iconify_field width="auto" height="auto" class="h-[60%]" }}
+                    </div>
+                {{ endif }}
+                <h2 class="flow-space-600 {{ show_icon and iconify_field ? 'text-500' : 'text-650' }} max-w-[25ch]">{{ headline }}</h2>
+                {{ text }}
+                <div class="flow-space-600">
+                    {{ link }}
+                        {{ partial:components/btn :as="typee" :linkUrl="url" :linkText="text" :linkIcon="icon" class="grow md:grow-0" xData="popup = true, $nextTick(() => $refs.popupCloseButton.focus()), data.video = '{{ url }}'" }}
+                    {{ /link }}
+                </div>
+            </li>
+        {{ /multicolumn }}
+    </ul>
+</section>

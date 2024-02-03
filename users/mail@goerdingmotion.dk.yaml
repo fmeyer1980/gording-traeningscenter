@@ -1,0 +1,12 @@
+name: Admin
+super: true
+id: e9619d0e-777f-4a13-913b-18fad6a5612a
+password_hash: $2y$10$grqcyrOloBAAh7e5XODTxemibpmb9bBzBmU4/yk0ZZoguPZyoLkHu
+preferences:
+  collections:
+    employees:
+      columns:
+        - title
+        - status
+    pages:
+      after_save: continue_editing

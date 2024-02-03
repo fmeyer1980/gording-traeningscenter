@@ -1,0 +1,124 @@
+.page-content{
+  @apply leading-relaxed
+}
+
+.page-content.dark > p{
+  @apply text-dark/70;
+}
+
+.page-content.dark > p strong, .page-content > .large-text{
+  @apply text-dark
+}
+
+.page-content > p strong, .page-content > .large-text{
+  @apply max-w-[45ch];
+}
+
+/* .page-content > blockquote {
+  @apply relative text-primary-shade py-400 text-500 leading-tight before:absolute before:top-0 before:h-px before:w-900 before:bg-primary-shade after:absolute after:bottom-0 after:h-px after:w-900 after:bg-primary-shade [&_p:last-child]:text-100 space-y-100 [&_p:last-child]:text-dark-shade;
+} */
+
+.page-content > blockquote {
+  @apply p-gutter text-500 bg-primary-glare border-l-8 border-primary-shade font-heading leading-[1.4];
+}
+
+.page-content > blockquote a {
+  @apply decoration-2 ;
+}
+
+.page-content > p > small{
+  font-size: .8em;
+}
+
+
+.page-content > ol:not([class]),
+.page-content > ul:not([class]) {
+  @apply pl-700 list-disc;
+}
+
+.page-content > ol,
+.page-content > ul {
+  @apply mx-[em];
+}
+
+.page-content li + li {
+  @apply mt-[1em]
+}
+
+.page-content > hr{
+  @apply w-full h-px border-0 my-gutter bg-current opacity-10;
+}
+
+.page-content a:not(.btn){
+  @apply text-primary-shade font-bold underline underline-offset-[5px];
+}
+
+.page-content > h1{
+  @apply text-800;
+  max-width: 25ch;
+}
+
+.page-content > h2{
+  @apply text-550;
+  max-width: 40ch;
+}
+
+.page-content > h3{
+  @apply text-400;
+  max-width: 45ch;
+}
+
+.page-content > h4{
+  @apply text-300;
+  max-width: 55ch;
+}
+
+.page-content > .title + h1,
+.page-content > .title + h2,
+.page-content > .title + h3,
+.page-content > .title + h4{
+  --flow-space: .6em;
+}
+
+
+.page-content > h1,
+.page-content > h2,
+.page-content > h3 {
+  --flow-space: 1.7em;
+}
+
+.page-content > h1 + *,
+.page-content > h2 + *,
+.page-content > h3 + *,
+.page-content > h4 + * {
+  --flow-space: 1.5em;
+}
+
+.page-content > h1 + p,
+.page-content > h2 + p,
+.page-content > h3 + p,
+.page-content > h4 + p {
+  --flow-space: .6em;
+}
+.page-content > h1 + .text-large{
+  --flow-space: 1.5em;
+}
+
+
+.page-content > table{
+  @apply bg-light-glare w-full rounded-lg overflow-hidden;
+}
+
+.page-content > table td{
+  @apply border border-dark/10 text-sm p-[.5em]
+}
+
+
+.page-content th{
+  @apply bg-primary-glare p-2 text-light-glare
+  
+}
+
+.page-content th{
+  @apply border-l border-light/10 
+}

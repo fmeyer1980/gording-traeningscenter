@@ -1,0 +1,223 @@
+title: 'Common fields'
+fields:
+  -
+    handle: color
+    field:
+      options:
+        dark-glare: 'Dark glare'
+        dark: Dark
+        dark-shade: 'Dark shade'
+        light-glare: 'Light glare'
+        light: Light
+        light-shade: 'Light shade'
+        primary-glare: 'Primary glare'
+        primary: Primary
+        primary-shade: Primary-shade
+      multiple: false
+      clearable: false
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      display: Color
+      type: select
+      icon: select
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      default: dark
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: simple_text
+    field:
+      buttons:
+        - bold
+        - italic
+        - removeformat
+        - anchor
+        - title
+        - brand_color
+        - large_text
+      smart_typography: false
+      save_html: false
+      inline: false
+      toolbar_mode: floating
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      remove_empty_nodes: false
+      antlers: false
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      type: bard
+      display: 'Simple text'
+      icon: bard
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    handle: text
+    field:
+      buttons:
+        - h1
+        - h2
+        - h3
+        - h4
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - alignleft
+        - aligncenter
+        - alignright
+        - title
+        - brand_color
+        - large_text
+        - highlight_box
+        - bts_attributes
+      smart_typography: false
+      save_html: false
+      inline: false
+      toolbar_mode: fixed
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      remove_empty_nodes: false
+      antlers: false
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      sets:
+        links:
+          display: Links
+          instructions: null
+          icon: link
+          sets:
+            new_set:
+              display: 'New Set'
+              instructions: null
+              icon: null
+              fields:
+                -
+                  handle: links
+                  field: links.links
+      type: bard
+      display: Text
+      icon: bard
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      bts_styles_button: icon
+  -
+    handle: section_heading
+    field:
+      buttons:
+        - h2
+        - bold
+        - italic
+        - removeformat
+        - horizontalrule
+        - title
+        - brand_color
+        - large_text
+        - xl_text
+      smart_typography: false
+      save_html: false
+      inline: false
+      toolbar_mode: fixed
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      remove_empty_nodes: true
+      antlers: false
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      type: bard
+      display: 'Section heading'
+      icon: bard
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      replicator_preview: true
+      word_count: false
+      always_show_set_button: false
+      collapse: false
+      previews: true
+  -
+    handle: section_space
+    field:
+      options:
+        flow-space-none: 'No space'
+        flow-space-100: XS
+        flow-space-300: Small
+        flow-space-600: Medium
+        flow-space-900: Large
+        flow-space-xl: XL
+      taggable: false
+      push_tags: false
+      multiple: false
+      clearable: false
+      searchable: true
+      cast_booleans: false
+      default: flow-space-xl
+      type: select
+      display: 'Section space'
+      icon: select
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: alignment
+    field:
+      options:
+        items-start: Left
+        'items-center text-center': Center
+        'items-end text-right': Right
+      default: items-start
+      type: button_group
+      display: Alignment
+      icon: button_group
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: size
+    field:
+      options:
+        small: Small
+        medium: Medium
+        large: Large
+      taggable: false
+      push_tags: false
+      multiple: false
+      clearable: false
+      searchable: true
+      cast_booleans: false
+      type: select
+      display: Size
+      icon: select
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      default: medium

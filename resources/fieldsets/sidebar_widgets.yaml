@@ -1,0 +1,279 @@
+title: 'Sidebar widgets'
+fields:
+  -
+    handle: sidebar_widgets
+    field:
+      collapse: accordion
+      previews: true
+      fullscreen: true
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          instructions: null
+          icon: null
+          sets:
+            contact_form:
+              display: 'Contact form'
+              instructions: null
+              icon: mail-inbox-content
+              fields:
+                -
+                  handle: title
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Title
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: text
+                  field:
+                    antlers: false
+                    type: textarea
+                    display: Text
+                    icon: textarea
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: form_picker
+                  field:
+                    max_items: 1
+                    type: form
+                    display: 'Form picker'
+                    icon: form
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    validate:
+                      - required
+                -
+                  handle: confirmation_page
+                  field:
+                    max_items: 1
+                    mode: default
+                    create: true
+                    collections:
+                      - pages
+                    type: entries
+                    display: 'Confirmation page'
+                    icon: entries
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    validate:
+                      - required
+            facebook_feed:
+              display: 'Facebook feed'
+              instructions: null
+              icon: social-facebook
+              fields: {  }
+            employee:
+              display: Employee
+              instructions: null
+              icon: user-avatar
+              fields:
+                -
+                  handle: title
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Title
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: employee
+                  field:
+                    mode: default
+                    create: true
+                    collections:
+                      - employees
+                    type: entries
+                    display: Employee
+                    icon: entries
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+            custom_code:
+              display: 'Custom code'
+              instructions: null
+              icon: null
+              fields:
+                -
+                  handle: title
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Title
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: custom_code
+                  field:
+                    theme: material
+                    mode: htmlmixed
+                    mode_selectable: true
+                    indent_type: tabs
+                    indent_size: 4
+                    key_map: default
+                    line_numbers: true
+                    line_wrapping: true
+                    antlers: false
+                    type: code
+                    display: 'Custom code'
+                    icon: code
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: show_code_in_box
+                  field:
+                    default: false
+                    type: toggle
+                    display: 'Show code in box'
+                    icon: toggle
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+            navigation_menu:
+              display: 'Navigation menu'
+              instructions: null
+              icon: addon-boxes-stack
+              fields:
+                -
+                  handle: title
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Title
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: text
+                  field:
+                    antlers: false
+                    type: textarea
+                    display: Text
+                    icon: textarea
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: all_sub_pages
+                  field:
+                    default: true
+                    type: toggle
+                    display: 'All sub pages'
+                    icon: toggle
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: custom_links
+                  field:
+                    fields:
+                      -
+                        handle: link
+                        field:
+                          collections:
+                            - pages
+                          type: link
+                          display: Link
+                          icon: link
+                          listable: hidden
+                          instructions_position: above
+                          visibility: visible
+                          replicator_preview: true
+                          hide_display: false
+                          container: assets
+                      -
+                        handle: text
+                        field:
+                          input_type: text
+                          antlers: false
+                          type: text
+                          display: Text
+                          icon: text
+                          listable: hidden
+                          instructions_position: above
+                          visibility: visible
+                          replicator_preview: true
+                          hide_display: false
+                    mode: table
+                    reorderable: true
+                    fullscreen: true
+                    type: grid
+                    display: 'Custom links'
+                    icon: grid
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    add_row: 'Add link'
+                    if:
+                      all_sub_pages: 'equals false'
+            reusable_widgets:
+              display: 'Reusable widgets'
+              instructions: null
+              icon: link
+              fields:
+                -
+                  handle: reusable_widgets
+                  field:
+                    mode: default
+                    create: true
+                    collections:
+                      - reusable_widgets
+                    type: entries
+                    display: 'Reusable widgets'
+                    icon: entries
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+      type: replicator
+      display: 'Sidebar widgets'
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false

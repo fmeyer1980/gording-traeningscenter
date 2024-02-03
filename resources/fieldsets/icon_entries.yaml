@@ -1,0 +1,171 @@
+title: 'Icon entries'
+fields:
+  -
+    handle: section_heading
+    field: common_fields.section_heading
+    config:
+      buttons:
+        - h2
+        - bold
+        - font_light
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - alignleft
+        - aligncenter
+        - alignright
+        - title
+        - brand_color
+        - large_text
+        - xl_text
+  -
+    handle: list_type
+    field:
+      options:
+        dynamic: Dynamic
+        custom: Custom
+      default: dynamic
+      type: button_group
+      display: 'List type'
+      icon: button_group
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: dynamic_list
+    field:
+      mode: default
+      create: true
+      collections:
+        - pages
+      type: entries
+      display: 'Dynamic list'
+      icon: entries
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      if:
+        list_type: 'equals dynamic'
+  -
+    handle: list
+    field:
+      collapse: accordion
+      previews: true
+      fullscreen: false
+      sets:
+        activity:
+          display: Activity
+          instructions: null
+          icon: null
+          sets:
+            item:
+              display: Item
+              instructions: null
+              icon: null
+              fields:
+                -
+                  handle: icon_type
+                  field:
+                    options:
+                      local-icon: 'Local icon'
+                      iconify-icon: 'Iconify icon'
+                    default: local-icon
+                    type: button_group
+                    display: 'Icon type'
+                    icon: button_group
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: false
+                    hide_display: false
+                -
+                  handle: local_icon
+                  field:
+                    path: /assets/icons
+                    path_helper: public_path
+                    recursive: default
+                    type: iconamic
+                    display: 'Local icon'
+                    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M19 9h19.84c2.76 0 5 2.24 5 5v24.84c0 2.76-2.24 5-5 5H14c-2.76 0-5-2.24-5-5V19c0-5.52 4.48-10 10-10ZM61.16 9H81c5.52 0 10 4.48 10 10v19.84c0 2.76-2.24 5-5 5H61.16c-2.76 0-5-2.24-5-5V14c0-2.76 2.24-5 5-5ZM14 56.16h24.84c2.76 0 5 2.24 5 5V86c0 2.76-2.24 5-5 5H19c-5.52 0-10-4.48-10-10V61.16c0-2.76 2.24-5 5-5ZM61.16 56.16H86c2.76 0 5 2.24 5 5V81c0 5.52-4.48 10-10 10H61.16c-2.76 0-5-2.24-5-5V61.16c0-2.76 2.24-5 5-5Z" style="fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:6px"/></svg>'
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: false
+                    hide_display: false
+                    if:
+                      icon_type: 'equals local-icon'
+                    width: 66
+                -
+                  handle: iconify_icon
+                  field:
+                    store_as: svg_data
+                    type: iconify
+                    display: 'Iconify icon'
+                    icon: iconify
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: false
+                    hide_display: false
+                    if:
+                      icon_type: 'equals iconify-icon'
+                    width: 66
+                -
+                  handle: icon_size
+                  field: common_fields.size
+                  config:
+                    display: 'Icon size'
+                    width: 33
+                -
+                  handle: title
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Title
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: text
+                  field:
+                    antlers: false
+                    type: textarea
+                    display: Text
+                    icon: textarea
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: link
+                  field:
+                    collections:
+                      - pages
+                    type: link
+                    display: Link
+                    icon: link
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: false
+                    hide_display: false
+      type: replicator
+      display: 'Custom list'
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      if:
+        list_type: 'equals custom'

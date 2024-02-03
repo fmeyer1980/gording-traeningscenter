@@ -1,0 +1,13 @@
+{{ img_setting = switch(
+    (image_settings == 'float-left') => "float-right pl-600 !w-[calc(50%+var(--size-600)/2)] !my-600",
+    (image_settings == 'float-right') => "float-left pr-600 !w-[calc(50%+var(--size-600)/2)] !my-600",
+    () => "!my-600"
+)}}
+<figure class="{{ img_setting }} flow-space-800">
+    {{ glide :src="image" width="{{ image_settings == "float-left" ? '350' : '700' }}" }}
+        {{ partial:components/image :imagePath="url" :width="width" :height="height" lazy="true" class="w-full" }}
+    {{ /glide }}
+    {{ if caption }}
+    <figcaption class="bg-light/50 p-200 text-xxs border border-light-shade">{{ caption }}</figcaption>
+    {{ /if }}
+</figure>
