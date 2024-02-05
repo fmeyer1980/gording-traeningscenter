@@ -28,7 +28,7 @@ intro_stats:
   -
     id: lr88x4z1
     title: medlemmer
-    number: 400+
+    number: 410+
 intro_links:
   -
     id: lr88xgy7
@@ -38,7 +38,7 @@ intro_links:
     color: primary
     flip_content: false
 updated_by: e9619d0e-777f-4a13-913b-18fad6a5612a
-updated_at: 1706971466
+updated_at: 1707134936
 intro_image: image-78.jpg
 page_sections:
   -
